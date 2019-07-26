@@ -1,3 +1,4 @@
+
 html{
     padding:2%;
     margin:2%;
@@ -11,7 +12,7 @@ main{
     right:40px;
 }
 .chat_and_send{
-    height: 700px;
+    height: 500px;
     width: 950px;
     display:inline-block;
 }
@@ -21,7 +22,7 @@ main{
     width:100%;
     height:60%;
     display:inline-block;
-    border:1px solid blue;
+    /* border:1px solid blue; */
     vertical-align:top;
     overflow-y:auto;
 }
@@ -29,14 +30,13 @@ main{
     width:100%;
     height:25%;
     display:inline-block;
-    border:1px solid red;
+    /* border:1px solid red; */
 }
 .sidebar{
     vertical-align:top;
     width: 25%;
     height:80%;
     display:inline-block;
-    border: 1px solid green;
 }
 .send form,textarea{
     width:100%;

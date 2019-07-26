@@ -1,24 +1,25 @@
 <div class="main">
-    <button class="btn btn-warning btn-sm" (click)="leaveRoom()">Leave Chat and Logout</button>
-    <h2>Welcome to {{room?.room_name}}</h2>
+    <button class="btn btn-primary btn-sm" (click)="leaveRoom()">Leave Chat and Logout</button>
+    <h3>Welcome to {{room?.room_name}}</h3>
 </div>
-<div class="body ">
-    <div class="chat_and_send">
+<div class="body">
+    <div class="chat_and_send shadow-lg p-5 bg-white rounded mt-5">
         <div class="chat">
             <p *ngFor="let message of messages">
                 <strong>{{message?.sender}}</strong>: {{message?.message}}
             </p>
         </div>
+        <hr>
         <div class="send">
-            <h4>Send a message:</h4>
+            <h4 class="text-secondary">Send a message:</h4>
             <form (submit)="sendmsg(newMessage)">
                 <p>{{newMessage | json}}</p>
-                <textarea name="newMessage" [(ngModel)]="newMessage" required></textarea>
-                <button>Send</button>
+                <textarea class="border border-secondary" name="newMessage" [(ngModel)]="newMessage" required></textarea>
+                <button class="btn btn-primary btn-sm">Send</button>
             </form>
         </div>
     </div>
-    <div class="sidebar">
+    <div class="sidebar ml-5 shadow-lg p-5 bg-white mt-5">
         <h2>Room members:</h2>
         <p *ngFor="let user of room?.users">User: {{user?.username}}</p>
     </div>
