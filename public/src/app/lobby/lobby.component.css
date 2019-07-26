@@ -1,0 +1,12 @@
+.errors{
+    color:red;
+}
+.main{
+    width: 550px;
+    margin:auto;
+}
+.top-left{
+    position:absolute;
+    top:25px;
+    right:40px;
+}

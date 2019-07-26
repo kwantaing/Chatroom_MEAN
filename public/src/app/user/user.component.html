@@ -1,0 +1,14 @@
+<div class="main shadow-lg p-5 bg-white rounded">
+    <h5>Please enter your desired username:</h5>
+    <form (submit)="onCreate(username)">
+        <fieldset>
+            <label>Username:</label>
+            <input type="text" name="newUser.username" required minlength="3" [(ngModel)]="newUser.username" #username="ngModel">
+            <br>
+                <p class="error text-danger" *ngIf="!username.pristine && username.errors">Please enter a valid username with at least 3 characters!</p><br *ngIf="!username.pristine && username.errors">
+                <p class="error text-danger">{{errors?.username?.message}}</p>
+            <br *ngIf="errors?.username">
+        </fieldset>
+        <button class="btn btn-primary">Let's go!</button>
+    </form>
+</div>

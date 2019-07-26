@@ -1,0 +1,25 @@
+<div class="top-left">
+    <button class="btn btn-warning btn-sm" (click)="logout()">Logout</button>
+</div>
+<div class="main shadow-lg p-5 bg-white rounded">
+    <h2>Welcome {{user?.username}}!</h2>
+    <div class="create mt-5">
+        <h5>Create a new Chatroom!</h5>
+        <form (submit)="createRoom(newChatroom)">
+            <p class="text-danger">{{errors?.room_name?.message}}</p>
+            <label for="newChatroom?.room_name"></label>
+            <input type="text" [(ngModel)]="newChatroom.room_name" name="newChatroom.room_name"class="form-control">
+            <button class="btn btn-primary btn-sm mt-3">Create and Join Room!</button>
+        </form>
+    </div>
+    <h2 class="mt-5 mb-5">Or...</h2>
+    <div class="join">
+        <h5>Join an existing Chatroom!</h5>
+        <form (submit)="joinRoom(room)">
+        <select class="form-control" name="room" [(ngModel)]="room">
+            <option *ngFor="let room of chatrooms" value={{room._id}}>{{room.room_name}}</option>
+        </select>
+        <button class="btn btn-primary btn-sm mt-3">Join Room!</button>
+        </form>
+    </div>
+</div>
